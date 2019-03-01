@@ -1,0 +1,39 @@
+https://getbootstrap.com/docs/4.3/getting-started/download/
+
+https://jquery.com/download/
+
+https://fontawesome.com/
+
+https://fonts.google.com/
+
+https://www.pexels.com/
+
+https://coolors.co/
+
+
+The Pulls
+	Espresso
+	americano
+	flat white
+	latte
+	mocha
+	cappuccino
+	dry capp
+
+The drips
+	Caffe Au lait
+	red eye
+	blackeye
+	deadeye
+	pourover
+	french press
+	one to the dome
+
+flavors
+	vanilla
+	salted carmel
+	cinnamon dolce
+
+
+Drink Timezone name flavor details
+

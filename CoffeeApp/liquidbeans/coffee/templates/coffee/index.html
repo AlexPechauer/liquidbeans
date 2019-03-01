@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Liquid Beans</title>
+	<link rel="stylesheet" href="{% static 'coffee/bootstrap-4.1.3-dist/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'coffee/style.css' %}">
+	<link rel="stylesheet" href="{% static 'coffee/css/fixed.css' %}">
+	<link rel="icon" href="{% static 'coffee/img/clock.png' %}">
+</head>
+
+<body>
+
+	<!-- Start Landing Page Section -->
+	<div class="landing">
+		<div class="home-wrap">
+			<div class="home-inner">
+			</div>
+		</div>
+	</div>
+	<div class="caption text-center">
+		<h1>Welcome to Liquid Beans</h1>
+		<h3>It's awesome!</h3>
+	</div>
+	<!-- End Landing Page Section -->
+
+	<!--- Start Let's get started Section -->
+	<div class="col-12 narrow-2 text-center">
+		<h3 class="heading">Let's Get Started</h1>
+			<div class="heading-underline"></div>
+			<p class="lead">Select below the drink you'd like your barista Taylor to make. Customize the order to your heart's content.
+				Be sure to enter today's secret keyword.</p>
+			<span class="bold mx-auto">Then submit!</span>
+	</div>
+	<!-- End of Let's get started Section -->
+
+	<!--- Start Drinks Section -->
+	<!-- Start of Jumbotron -->
+	<div class="jumbotron">
+		<div class="narrow text-center">
+			<div class="col-12">
+				<h3 class="heading">Drinks</h3>
+				<hr class="heading-underline">
+			</div>
+			<div class="row">
+				<!-- New Card -->
+				{% if order_list %}
+				{% for order in order_list %}
+				<div class="col-sm-6 col-md-6 col-lg-4">
+					<div class="card">
+						<a data-toggle="collapse" href="#test{{ order.id }}" aria-expanded="true" aria-controls="test{{ order.id }}">
+							<img src="{% static 'coffee\img\coffee.jpg' %}" alt="member" class="card-img-top">
+						</a>
+						<div id="test{{ order.id }}" class="collapse">
+							<div class="card-body">
+								<h5 class="card-title text-capitalize">{{ order.drink }}</h5>
+								<form>
+									<div class="form-group">
+										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Keyword">
+									</div>
+									<fieldset class="form-group">
+										<div class="row">
+											<div class="col-6">
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+													<label class="form-check-label" for="gridRadios1">
+														First radio
+													</label>
+												</div>
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+													<label class="form-check-label" for="gridRadios2">
+														Second radio
+													</label>
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+													<label class="form-check-label" for="gridRadios1">
+														First radio
+													</label>
+												</div>
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+													<label class="form-check-label" for="gridRadios2">
+														Second radio
+													</label>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+									<div class="form-group">
+										<label for="comment">Details:</label>
+										<textarea class="form-control" rows="5" id="comment"></textarea>
+									</div>
+									<!--<button type="submit" class="btn card-button">Submit</button>-->
+									<button type="submit" class="btn card-button" data-toggle="modal" data-target="#exampleModalCenter">Submit</button>
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">WILCO</h5>
+													<button type="button card-button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, totam!</p>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<a data-toggle="collapse" href="#test{{ order.id }}" aria-expanded="true" aria-controls="test{{ order.id }}">
+							<div class="card-footer height-footer bg-secondary d-flex justify-content-center">
+								<h3 class="card-heading">Coffee</h3>
+							</div>
+						</a>
+					</div>
+				</div>
+				{% endfor %}
+				{% else %}
+				<p>Still not working</p>
+				{% endif %}
+				<!-- end of Card -->
+			</div>
+		</div> <!-- End Row -->
+	</div> <!-- End Narrow -->
+	</div> <!-- end of jumbotron-->
+	<!-- End of Drinks Section -->
+
+	<!--- Start Footer Section -->
+	<footer>
+		<div class="row justify-content-center">
+			<div class="col-md-5 text-center">
+				<i class="fas fa-coffee"></i>
+				<h5>Liquid Beans</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste aspernatur reprehenderit voluptas iusto accusamus, aliquid. Cupiditate necessitatibus quidem labore. A!</p>
+				<strong>Contact Info</strong>
+				<p>(555) 555-5555<br>email@email.com</p>
+				<a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
+				<a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a>
+				<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+			</div>
+			<hr class="socket">
+			&copy; Alex D. Pechauer
+		</div>
+	</footer>
+	<!-- End of Footer Section -->
+
+	<!--- Script Source Files -->
+	<script src="{% static 'coffee/js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'coffee/bootstrap-4.1.3-dist/js/bootstrap.min.js' %}"></script>
+	<script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
+	<!--- End of Script Source Files -->
+
+</body>
+</html>
