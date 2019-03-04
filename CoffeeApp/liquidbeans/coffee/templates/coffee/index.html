@@ -1,3 +1,7 @@
+<!-- Thanks for taking a peek!
+Check out what else I can do at https://github.com/AlexPechauer -->
+
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Liquid Beans</title>
 	<link rel="stylesheet" href="{% static 'coffee/bootstrap-4.1.3-dist/css/bootstrap.min.css' %}">
-	<link rel="stylesheet" href="{% static 'coffee/style.css' %}">
+	<link rel="stylesheet" href="{% static 'coffee/styleMaster.css' %}">
 	<link rel="stylesheet" href="{% static 'coffee/css/fixed.css' %}">
 	<link rel="icon" href="{% static 'coffee/img/clock.png' %}">
 </head>
@@ -49,65 +53,66 @@
 				<!-- New Card -->
 				{% if order_list %}
 				{% for order in order_list %}
-				<div class="col-sm-6 col-md-6 col-lg-4">
+				<div class="col-sm-6 col-md-6 col-lg-3 mx-auto">
 					<div class="card">
 						<a data-toggle="collapse" href="#test{{ order.id }}" aria-expanded="true" aria-controls="test{{ order.id }}">
-							<img src="{% static 'coffee\img\coffee.jpg' %}" alt="member" class="card-img-top">
+							<img src="{{ order.image.url }}" alt="member" class="card-img-top">
 						</a>
 						<div id="test{{ order.id }}" class="collapse">
 							<div class="card-body">
-								<h5 class="card-title text-capitalize">{{ order.drink }}</h5>
+								<h1 class="card-title text-capitalize">{{ order.drink }}</h1>
+								<h6>{{ order.description }}</h6>
 								<form>
 									<div class="form-group">
-										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
+										<input type="name" class="form-control" id="inputName{{ order.id }}" aria-describedby="Help" placeholder="Name">
 									</div>
 									<div class="form-group">
-										<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Keyword">
+										<input type="password" class="form-control" id="inputPassword{{ order.id }}" placeholder="Keyword">
 									</div>
 									<fieldset class="form-group">
 										<div class="row">
 											<div class="col-6">
 												<div class="form-check">
-													<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+													<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios{{ order.id }}-1" value="option{{ order.id }}-1">
 													<label class="form-check-label" for="gridRadios1">
-														First radio
+														{{ order.flavor1 }}
 													</label>
 												</div>
 												<div class="form-check">
-													<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+													<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios{{ order.id }}-2" value="option{{ order.id }}-2">
 													<label class="form-check-label" for="gridRadios2">
-														Second radio
+														{{ order.flavor2 }}
 													</label>
 												</div>
 											</div>
 											<div class="col-6">
 												<div class="form-check">
-													<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+													<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios{{ order.id }}-3" value="option{{ order.id }}-4">
 													<label class="form-check-label" for="gridRadios1">
-														First radio
+														{{ order.flavor3 }}
 													</label>
 												</div>
 												<div class="form-check">
-													<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+													<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios{{ order.id }}-4" value="option{{ order.id }}-4">
 													<label class="form-check-label" for="gridRadios2">
-														Second radio
+														{{ order.flavor4 }}
 													</label>
 												</div>
 											</div>
 										</div>
 									</fieldset>
 									<div class="form-group">
-										<label for="comment">Details:</label>
-										<textarea class="form-control" rows="5" id="comment"></textarea>
+										<label for="comment{{ order.id }}">Customize:</label>
+										<textarea class="form-control" rows="5" id="comment{{ order.id }}"></textarea>
 									</div>
 									<!--<button type="submit" class="btn card-button">Submit</button>-->
-									<button type="submit" class="btn card-button" data-toggle="modal" data-target="#exampleModalCenter">Submit</button>
+									<button type="submit" class="btn card-button" data-toggle="modal" data-target="#ModalCenter{{ order.id }}">Submit</button>
 									<!-- Modal -->
-									<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+									<div class="modal fade" id="ModalCenter{{ order.id }}" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle{{ order.id }}" aria-hidden="true">
 										<div class="modal-dialog modal-dialog-centered" role="document">
 											<div class="modal-content">
 												<div class="modal-header">
-													<h5 class="modal-title" id="exampleModalLongTitle">WILCO</h5>
+													<h5 class="modal-title" id="ModalLongTitle{{ order.id }}">WILCO</h5>
 													<button type="button card-button" class="close" data-dismiss="modal" aria-label="Close">
 														<span aria-hidden="true">&times;</span>
 													</button>
@@ -126,7 +131,7 @@
 						</div>
 						<a data-toggle="collapse" href="#test{{ order.id }}" aria-expanded="true" aria-controls="test{{ order.id }}">
 							<div class="card-footer height-footer bg-secondary d-flex justify-content-center">
-								<h3 class="card-heading">Coffee</h3>
+								<h3 class="card-heading">{{ order.drink }}</h3>
 							</div>
 						</a>
 					</div>
@@ -168,4 +173,5 @@
 	<!--- End of Script Source Files -->
 
 </body>
+
 </html>

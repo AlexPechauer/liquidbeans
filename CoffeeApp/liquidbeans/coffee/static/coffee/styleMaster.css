@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
+body {
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+    color: #505962;
+}
+
+.bold {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.offset:before {
+    display: block;
+    content: "";
+    height: 4rem;
+    margin-top: -4rem;
+}
+
+
+/*============= Landing Page =============*/
+.home-inner {
+    background-image: url(img/IMG_0962.jpg);
+    opacity: .25;
+}
+
+.caption {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 6%;
+    z-index: 1;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Special Elite', cursive;
+}
+
+.caption h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: .3rem;
+    padding-bottom: 1rem;
+    color: #6f4e37;
+}
+
+.caption h3 {
+    font-size: 3rem;
+    padding-bottom: 1.6rem;
+    color: #6f4e37;
+}
+
+/*============= COURSE SECTION =============*/
+.narrow {
+    width: 100%;
+    margin: 1.5rem auto;
+    padding-top: 1rem;
+}
+
+.narrow-2 {
+    width: 75%;
+    margin: 1.5rem auto;
+    padding-top: 1rem;
+}
+
+/*============= COURSE SECTION =============*/
+.jumbotron {
+    margin-bottom: 0;
+    padding: 0rem 0 3.5rem;
+    border-radius: 0;
+}
+
+h3.heading {
+    font-size: 1.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1.9rem;
+}
+
+.heading-underline {
+    width: 6rem;
+    height: .2rem;
+    background-color: #6f4e37;
+    margin: 0 auto 2rem;
+}
+
+.feature sv.svg-inline--fa {
+    color: #1ebba3;
+}
+
+.feature h3 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    padding-bottom: .4rem;
+}
+
+.feature p {
+    font-size: 1.1rem;
+}
+/*============= Card SECTION =============*/
+
+.card-heading {
+    font-size: 2rem;
+    color: white;
+    font-family: 'Special Elite', cursive;
+}
+
+.card-heading:hover {
+    font-size: 2rem;
+    color: white;
+    font-family: 'Special Elite', cursive;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+}
+
+.height-footer {
+    height: 3.5rem;
+}
+
+.card-button {
+    color: #505962;
+}
+
+.card-body {
+    text-align: left;
+}
+
+ /* .card-img-top {
+    height: 25vh;
+    object-fit: cover;
+} */
+
+.card-img-top {
+   height: 200px;
+   object-fit: cover;
+}
+
+/*============= Footer SECTION =============*/
+footer {
+    background-color: #6f4e37;
+    color: white;
+    padding: 2rem 0 2rem;
+}
+
+footer img {
+    height: 3rem;
+    margin: 1.5rem 0;
+}
+
+footer a {
+    color: white;
+}
+
+footer svg.svg-inline--fa {
+    font-size: 1.6rem;
+    margin: 1.2rem .5rem 0 0;
+    color: white !important;
+}
+
+footer svg.svg-inline--fa:hover {
+    color: #505962 !important;
+}
+
+hr.socket {
+    width: 100%;
+    border-top: .2rem solid #e9ecef;
+    margin-top: 3rem;
+}
+
+/*============= Media queries =============*/
+@media (max-width: 767px) {
+    .caption h1 {
+        font-size: 3.5rem;
+        letter-spacing: .15rem;
+        padding-bottom: .5rem;
+    }
+
+    .caption h3 {
+        font-size: 2rem;
+        padding-bottom: 1.2rem;
+    }
+
+    .narrow h1 {
+        font-size: 1.5rem;
+    }
+
+    .narrow-2 {
+        width: 100%;
+        margin: 1.5rem auto;
+        padding-top: 1rem;
+    }
+
+}
+
+
+/*============ BOOTSTRAP BREAK POINTS:
+
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+=============*/
