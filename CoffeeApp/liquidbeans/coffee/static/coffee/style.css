@@ -18,7 +18,9 @@ body {
     margin-top: -4rem;
 }
 
-
+.alert {
+    margin-bottom: 0;
+}
 /*============= Landing Page =============*/
 .home-inner {
     background-image: url(img/IMG_0962.jpg);
@@ -130,6 +132,16 @@ a:-webkit-any-link {
 
 .card-body {
     text-align: left;
+}
+
+ /* .card-img-top {
+    height: 25vh;
+    object-fit: cover;
+} */
+
+.card-img-top {
+   height: 200px;
+   object-fit: cover;
 }
 
 /*============= Footer SECTION =============*/
